@@ -10,14 +10,21 @@ class Task7 {
         for (int i = 0; i < 1; i++) {
             System.out.print("Please insert first digit: ");
             float firstDigit = input.nextFloat();
+
             System.out.print("Please insert a mathematical operator: ");
             String operator = input.next();
             if (!Pattern.matches("[+*/-]", operator)) {
                 System.out.println("Operator not exist");
                 break;
             }
+
             System.out.print("Please insert second digit: ");
             float secondDigit = input.nextFloat();
+            if(firstDigit == 0 && secondDigit == 0) {
+                System.out.println("Wrong operation");
+                break;
+            }
+
             System.out.println(firstDigit + " " + operator + " " + secondDigit + " = " + result(firstDigit, operator, secondDigit));
             System.out.println("Are we done?");
             System.out.print("for continue type \"go\", for exit type \"stop\": ");
